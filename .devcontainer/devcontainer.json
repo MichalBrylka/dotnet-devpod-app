@@ -1,0 +1,13 @@
+{
+  "name": ".NET Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:10.0",
+  "features": {},
+  "postCreateCommand": "dotnet --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp"
+      ]
+    }
+  }
+}
