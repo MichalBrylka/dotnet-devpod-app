@@ -1,13 +1,17 @@
 {
-  "name": ".NET Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:10.0",
-  "features": {},
-  "postCreateCommand": "dotnet --version",
+  "name": "DB demo (.NET 9)",
+  "dockerComposeFile": "docker-compose.yml",  
+  "service": "app",
+  "workspaceFolder": "/workspaces/app",
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-dotnettools.csharp"
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ckolkman.vscode-postgres"
       ]
     }
-  }
+  },
+  "postCreateCommand": "dotnet restore",
+  "remoteUser": "root"
 }

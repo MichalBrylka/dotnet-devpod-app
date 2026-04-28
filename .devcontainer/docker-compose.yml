@@ -1,0 +1,16 @@
+services:
+  app:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    volumes:
+      - ..:/workspaces/app:cached # Match the static path here
+    network_mode: service:db # Shares network stack with DB
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: CustomersDB
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"
